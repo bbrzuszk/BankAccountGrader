@@ -7,7 +7,7 @@ public class AccountTest {
 			System.out.println("Passed");
 		}
 		else{
-			System.out.println("Failed");
+			System.out.println("Failed BigTime");
 		}
 		System.out.print("\nGet method test: ");
 		if(testGetMethods()){ System.out.println("Passed");}
