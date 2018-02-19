@@ -7,7 +7,7 @@ public class AccountTest {
 			System.out.println("Passed");
 		}
 		else{
-			System.out.println("Failed BigTime");
+			System.out.println("Failed");
 		}
 		System.out.print("\nGet method test: ");
 		if(testGetMethods()){ System.out.println("Passed");}
@@ -51,18 +51,23 @@ public class AccountTest {
 		return false;
 	}
 	public static boolean testDeposit(){
-		Account a = new Account("Test Owner", 1234, 1000.0);
+		try{
+	    Account a = new Account("Test Owner", 1234, 1000.0);
 		a.deposit(100);
 		if(a.getBalance() == 1100.0)
-			return true;
+			return true;}
+			catch(Exception e){}
 		return false;
 	}
 	public static boolean testWithdraw(){
-		Account a = new Account("Test Owner", 1234, 1000.0);
-		if(a.withdraw(100) == 100)
-			if(a.getBalance() == 900.0)
-				if(a.withdraw(1000) == -1)
-					return true;
+		try{
+            Account a = new Account("Test Owner", 1234, 1000.0);
+            if(a.withdraw(100) == 100)
+                if(a.getBalance() == 900.0)
+                    if(a.withdraw(1000) == -1)
+                        return true;
+		    }
+        catch(Exception e){}
 		return false;
 	}
 	public static boolean testDisplay(){
